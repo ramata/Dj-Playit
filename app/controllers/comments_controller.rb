@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
 # GET /comments
 def index
-    @comments = Post.all
+    @comments = Comment.all
   end
 
   # GET /comments/1
@@ -23,6 +23,7 @@ end
     @user = current_user
     @user = User.find(params[:user_id])
     @comment = @user.comments.create(comment_params)
+    @comment.user_id = current_user.id
 
     respond_to do |format|
       if @comment.save
@@ -72,3 +73,5 @@ end
 
     def comment_params
       params.require(:comment).permit(:body, :author)
+    end
+  end

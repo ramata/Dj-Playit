@@ -3,10 +3,10 @@ class Ability
 
   def initialize(user)
     6. user ||= User.new # guest user (not logged in)
-7.   can :read, Post
+7.   can :read, Comment
 8.
-9.   can [:create, :update, :destroy], Post do |post|
-10.     post.user == user
+9.   can [:create, :update, :destroy], Comment do |comment|
+10.     comment.user == user
 11.   end
     # Define abilities for the passed in user here. For example:
     #

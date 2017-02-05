@@ -1,0 +1,19 @@
+<h2>New Song</h2>
+
+<form method="post" action="/songs">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label>Title</label>
+  <input type="text" name="song[title]">
+
+  <label>Album</label>
+  <input type="text" name="song[album]">
+
+  <label>Preview URL</label>
+  <input type="text" name="song[preview_url]">
+
+  <label>Artist ID</label>
+  <input type="text" name="song[artist_id]">
+
+  <input type="submit" value="Create Song">
+</form>

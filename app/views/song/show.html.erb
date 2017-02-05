@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="listening-info"> You are listening to...
+      </h1>
+      <h2><%= @song.title %> <a href="/songs/<%= @song.id %>/edit">(edit)</a></h2>
+      <h3>By: <%= @song.artist.name %></h3>
+      Album: <%= @song.album %></br>
+      <audio controls src="<%= @song.preview_url %>"></audio>
+    </div>
+  </div>
+</div>

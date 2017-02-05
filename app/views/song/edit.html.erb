@@ -1,0 +1,27 @@
+<h2>Edit Song</h2>
+
+<form action="/songs/<%= @song.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="song[title]">Title:</label>
+  <input name="song[title]" value="<%= @song.title %>">
+
+  <label for="song[album]">Album:</label>
+  <input name="song[album]" value="<%= @song.album %>">
+
+  <label for="song[preview_url]">Preview URL:</label>
+  <input name="song[preview_url]" value="<%= @song.preview_url %>">
+
+  <label for="song[artist_id]">Artist ID:</label>
+  <input name="song[artist_id]" value="<%= @song.artist_id %>">
+
+  <input type="submit" value="Update Song">
+</form>
+
+<form action="/songs/<%= @song.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input class="delete" type="submit" value="Delete Song">
+</form>
