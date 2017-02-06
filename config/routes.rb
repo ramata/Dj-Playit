@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   devise_for :users
 
-  # resources :users do
+   resources :users do
+     resources :comments
+     resources :songs
+   end
+#    resources :users do |users|
+#      users.resources  :songs
+# end
 
   resources :songs
 

@@ -1,3 +1,26 @@
 <h2>Edit Artist</h2>
 
-<%= render partial: "form" %>
+<!-- <%= render partial: "form" %> -->
+
+<form method="post" action="/artists/<%= @artist.id %>">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label>Name</label>
+  <input type="text" name="artist[name]" value="<%= @artist.name %>">
+
+  <label>Photo Url</label>
+  <input type="text" name="artist[photo_url]" value="<%= @artist.photo_url %>">
+
+  <label>Nationality</label>
+  <input type="text" name="artist[nationality]" value="<%= @artist.nationality %>">
+
+  <input type="submit" value="Update Artist">
+</form> 
+
+<form action="/artists/<%= @artist.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="submit" class="delete" name="submit" value="Delete Artist">
+</form>

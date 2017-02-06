@@ -11,8 +11,8 @@ class ArtistsController < ApplicationController
 
   # create
   def create
-    # @artist = Artist.create!(artist_params)
-    render text: params
+    @artist = Artist.create!(artist_params)
+    # render text: params
 
     redirect_to "/artists/#{@artist.id}"
   end
