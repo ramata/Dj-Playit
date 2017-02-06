@@ -3,15 +3,19 @@ Rails.application.routes.draw do
   devise_for :users
 
   # resources :users do
-  resources :comments
-  # resources :songs
+
+  resources :songs
 
  root "song#index"
- get '/song' => "song#song"
+ # get '/song' => "song#song"
  get '/about' => "song#about"
 
+
 root "comments#index"
-get '/comments/new' => "comments#new"
+resources :comments
+
+root 'artists#index'
+resources :artists
 
   end
 #song routes
