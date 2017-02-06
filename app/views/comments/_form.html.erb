@@ -1,4 +1,4 @@
-<%= form_for([@users, @users.comments.build]) do |f| %>
+<%= form_for([@users, @user.comments.build]) do |f| %>
 <p>
   <%= f.label :author %><br>
   <%= f.text_field :author %><br>

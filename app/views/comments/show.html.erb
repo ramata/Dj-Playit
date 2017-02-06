@@ -1,0 +1,9 @@
+<h1>Comments</h1>
+
+<%= @comment.user.name %>
+
+<%= @comment.body %>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %>
+
+<%= link_to 'Back', comments_path %>
