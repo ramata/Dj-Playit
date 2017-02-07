@@ -1,8 +1,10 @@
 <%= render 'shared/nav' %>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <button class="grey">Leave a comment</button>
-    </div>
-  </div>
-</div>
+<h2>Reviews</h2>
+<%= link_to 'NEW Comment (+) ', new_comment_path %><br>
+
+
+<% @comments.each do |comment| %>
+  <%= comment.body %><br>
+  <%= comment.author %>
+
+<% end %>

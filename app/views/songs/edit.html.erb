@@ -1,6 +1,6 @@
 <h2>Edit Song</h2>
 
-<form action="/songs/<%= @song.id %>" method="post">
+<form action="/songs/<%= @song.id %>" method="put">
   <input type="hidden" name="_method" value="put">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
@@ -14,12 +14,13 @@
   <input name="song[preview_url]" value="<%= @song.preview_url %>">
 
   <label for="song[artist_id]">Artist ID:</label>
-  <input name="song[artist_id]" value="<%= @song.artist_id %>">
+  <input name="song[artist_id_change]" value="<%= @song.artist_id %>">
 
   <input type="submit" value="Update Song">
 </form>
 
-<form action="/songs/<%= @song.id %>" method="post">
+
+<form action="/songs/<%= @song.id %>" method="destroy">
   <input type="hidden" name="_method" value="delete">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 

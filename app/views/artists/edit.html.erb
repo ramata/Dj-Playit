@@ -16,9 +16,9 @@
   <input type="text" name="artist[nationality]" value="<%= @artist.nationality %>">
 
   <input type="submit" value="Update Artist">
-</form> 
+</form>
 
-<form action="/artists/<%= @artist.id%>" method="post">
+<form action="/artists/<%= @artist.id%>" method="destroy">
   <input type="hidden" name="_method" value="delete">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 

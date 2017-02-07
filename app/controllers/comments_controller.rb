@@ -1,40 +1,35 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource only: [:edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index]
 
 # GET /comments
 def index
     @comments = Comment.all
   end
 
-  # GET /comments/1
-  def show
-      @user = current_user
-      @comment = Comment.find(params[:id])
-  end
-
   # GET /comments/new
   def new
     @user = current_user
+    @comment = @user.comments.create(params[:id])
     @comment = Comment.new
 end
 
 # Comment /comments
   def create
     @user = current_user
-    # @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @comment = @user.comments.create(comment_params)
     @comment.user_id = current_user.id
 
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render :show, status: :created, location: @comment }
-      else
-        format.html { render :new }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to comment_path(@comment)
 end
+
+# GET /comments/1
+def show
+    @user = current_user
+    @comment =@user.comments.find(params[:id])
+  end
+
 
   def edit
     @user = current_user
@@ -46,28 +41,21 @@ end
     @user = current_user
     @comment = Comment.find(params[:id])
 
-    respond_to do |format|
-      if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comment }
-      else
-        format.html { render :edit }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+    if @comment.update(comment_params)
+      redirect_to comment_path(@comment)
+    else
+      render 'edit'
     end
   end
 
-# DELETE /posts/1
+# DELETE /comments/1
   def destroy
-    @user = User.find(params[:user_id])
-    @comment = @user.comments.find(params[:user_id])
+    @user = current_user
+    @comment = @user.comments.find(params[:id])
 
     @comment.destroy
-  respond_to do |format|
-    format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
-    format.json { head :no_content }
+    redirect_to comments_path
   end
-end
 
   private
   # Use callbacks to share common setup or constraints between actions.
@@ -76,6 +64,6 @@ end
     end
 
     def comment_params
-      params.require(:comment).permit(:body, :author)
+      params.require(:comment).permit(:body, :author, :user_id)
     end
   end

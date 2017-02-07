@@ -1,15 +1,16 @@
-<%= form_for([@user, @comment]) do |f| %>
-<p>
+<%= form_for([@user,@user.comments.build]) do |f| %>
+<div class="container">
+    <div class="form-group">
   <%= f.label :author %><br>
   <%= f.text_field :author %><br>
-</p>
-
-<p>
+    </div>
+    <div class="form-group">
   <%= f.label :body %><br>
-  <%= f.text_area :body %><br>
-</p>
+  <%= f.text_area :body, class: "form-control" %><br>
+    </div>
 
-<p>
-  <%= f.submit %>
-</p>
+    <div class="form-group">
+      <%= f.submit "Submit comment", class: "btn btn-primary" %>
+    </div>
+</div>
 <% end %>

@@ -23,21 +23,21 @@
   </div>
   <div class="collapse navbar-collapse" id="myNavbar">
    <ul class="nav navbar-nav ">
-    <li><a href="/">Dj-Playit</a></li>
-    <li><a href="/about">About</a></li>
-      <li><a href="/recipes">Artists</a></li>
-      <li><a href="/reviews">Songs</a></li>
-      <li><a href="/allstars-chefs">Reviews</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <% if (current_user) %>
-        <li><a href="#"><%= current_user.email %></a></li>
-        <li><a href="/logout">Logout</a></li>
-      <%  else  %>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/signup">Signup</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/artists">Artists</a></li>
+      <li><a href="/songs">Songs</a></li>
+      <li><a href="/">Reviews</a></li>
+   </ul>
+   <ul class="nav navbar-nav navbar-right">
+     <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path %> |
+      <%= link_to "Login", new_user_session_path  %>
       <% end %>
    </ul>
   </div>
  </div>
+
 </nav>
