@@ -1,6 +1,11 @@
-<h2>New Song</h2>
+<%= render 'shared/nav' %>
+<h1>New Song</h1>
+<%= render 'form' %>
 
-<form method="post" action="/songs">
+<%= link_to 'Back', comments_path %>
+
+
+<!-- <form method="post" action="/songs">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <label>Title</label>
@@ -16,4 +21,4 @@
   <input type="text" name="song[artist_id]">
 
   <input type="submit" value="Create Song">
-</form>
+</form> -->

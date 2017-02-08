@@ -1,13 +1,18 @@
 <%= form_for @artist do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :photo_url %>
-  <%= f.text_field :photo_url%>
-
-  <%= f.label :nationality %>
-  <%= f.text_field :nationality %>
-
-  <%= f.submit %>
+<div class="container">
+    <div class="form-group">
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+    </div>
+    <div class="form-group">
+  <%= f.label :photo_url %><br>
+  <%= f.text_field :photo_url%><br>
+    </div>
+    <div class="form-group">
+  <%= f.label :nationality %><br>
+  <%= f.text_field :nationality %><br>
+  </div>
+  <div class="form-group">
+  <%= f.submit "Create Artist", class: "btn btn-primary" %>
 
 <% end %>
