@@ -1,7 +1,7 @@
-<h2><%= @artist.name %> <a href="/artists/<%= @artist.id %>/edit">(edit)</a></h2>
+<h2><%= @artist.name %></h2>
 <h4><%= @artist.nationality %></h4>
 
-<!-- <img class='artist-photo' src="<%= @artist.photo_url %>"> -->
+<img class='artist-photo' src="<%= @artist.photo_url %>">
 <%= image_tag @artist.photo_url %>
 
 <h3>Songs <a href="/songs/new">(+)</a></h3>
@@ -15,3 +15,5 @@
     </li>
   <% end %>
 </ul>
+<br><%= link_to 'Edit', edit_artist_path(@artist) %><br>
+<br><%= link_to 'Delete', (@artist), method: :delete %><br>
