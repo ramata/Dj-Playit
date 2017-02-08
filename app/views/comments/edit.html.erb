@@ -1,19 +1,2 @@
 <h2>Edit comments</h2>
-<form action="/comments/<%= @comment.id %>" method="put">
-  <input type="hidden" name="_method" value="put">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-  <label for="comment[author]">Author:</label>
-  <input name="comment[author]" value="<%= @comment.author %>">
-
-  <label for="comment[body]">Body:</label>
-  <input name="comment[body]" value="<%= @comment.body %>">
-  <input type="submit" value="Update Comment">
-</form>
-
-<form action="/comments/<%= @comment.id %>" method="destroy">
-  <input type="hidden" name="_method" value="delete">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-  <input class="delete" type="submit" value="Delete Comment">
-</form>
+<%= render 'form' %>

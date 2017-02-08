@@ -4,20 +4,20 @@ Rails.application.routes.draw do
 
    resources :users do
      resources :comments
-     resources :songs
+    #  resources :songs
    end
 
 
  resources :songs
 
- root "song#index"
+ # root "song#index"
  get '/about' => "welcome#about"
 
 
-root "comments#index"
-resources :comments
+# root "comments#index"
+# resources :comments
 
-root 'artists#index'
+# root 'artists#index'
 resources :artists
 
   end

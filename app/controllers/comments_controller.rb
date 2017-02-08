@@ -3,48 +3,45 @@ class CommentsController < ApplicationController
   before_filter :authenticate_user!, except: [:index]
 
 # GET /comments
-def index
+  def index
+    @user = current_user
     @comments = Comment.all
   end
 
   # GET /comments/new
   def new
     @user = current_user
-    @comment = @user.comments.create(params[:user_id])
-    @comment = Comment.new
-
+    @comment = @user.comments.new
 end
 
 # Comment /comments
   def create
-    @user = current_user
-    @user = User.find(params[:user_id])
-    @comment = @user.comments.build(comment_params)
-    @comment.user_id = current_user.id
+  @user = current_user
+    @comment = @user.comments.create(comment_params)
 
-    redirect_to user_comment_path(:id, :user_id)
+    redirect_to user_comment_path(@user, @comment)
 end
 
 # GET /comments/1
-def show
+  def show
     @user = current_user
-    @comment =@user.comments.find(params[:id])
+    @comment = @user.comments.find(params[:id])
 
   end
 
 
   def edit
     @user = current_user
-    @comment = Comment.find(params[:id])
+    @comment = @user.comments.find(params[:id])
   end
 
 # PATCH/PUT /posts/1
   def update
     @user = current_user
-    @comment = Comment.find(params[:id])
+    @comment = @user.comments.find(params[:id])
 
     if @comment.update(comment_params)
-      redirect_to comment_path(@comment)
+      redirect_to user_comment_path(@user)
     else
       render 'edit'
     end
@@ -54,9 +51,8 @@ def show
   def destroy
     @user = current_user
     @comment = @user.comments.find(params[:id])
-
     @comment.destroy
-    redirect_to comments_path
+    redirect_to user_comments_path(@user)
   end
 
   private
