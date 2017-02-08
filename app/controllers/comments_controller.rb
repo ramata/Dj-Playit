@@ -10,24 +10,26 @@ def index
   # GET /comments/new
   def new
     @user = current_user
-    @comment = @user.comments.create(params[:id])
+    @comment = @user.comments.create(params[:user_id])
     @comment = Comment.new
+
 end
 
 # Comment /comments
   def create
     @user = current_user
     @user = User.find(params[:user_id])
-    @comment = @user.comments.create(comment_params)
+    @comment = @user.comments.build(comment_params)
     @comment.user_id = current_user.id
 
-    redirect_to comment_path(@comment)
+    redirect_to user_comment_path(:id, :user_id)
 end
 
 # GET /comments/1
 def show
     @user = current_user
     @comment =@user.comments.find(params[:id])
+
   end
 
 

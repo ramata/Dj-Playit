@@ -3,7 +3,7 @@
     <div class="col-xs-12">
       <h1 class="listening-info"> You are listening to...
       </h1>
-      <h2><%= @song.title %> <a href="/songs/<%= @song.id %>/edit">(edit)</a><a href="/songs/<%= @song.id %>/comments/new">(review)</a></h2>
+      <h2><%= @song.title %> <a href="/songs/<%= @song.id %>/edit">(edit)</a><a href="/songs/<%= @song.id %>/">(review)</a></h2>
       <h3>By: <%= @song.artist_id %></h3>
       Album: <%= @song.album %></br>
       <audio controls src="<%= @song.preview_url %>"></audio>

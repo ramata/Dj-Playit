@@ -1,8 +1,13 @@
 <%= render 'shared/nav' %>
-<h2>Artists</h2>
-<%= link_to 'NEW ARTIST (+) ', new_artist_path %>
-
-
+<!-- <div class="container"> -->
+  <div class="row">
+     <div class="col-lg-12">
+      <h2>Artists</h2><br>
+    </div>
+  </div>
+ <%= link_to 'NEW ARTIST (+) ', new_artist_path %><br>
+<!-- </div> -->
+<br>
 <ul>
   <% @artists.each do |artist| %>
     <li>

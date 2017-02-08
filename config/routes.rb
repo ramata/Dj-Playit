@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
 
  resources :songs
+
  root "song#index"
  get '/about' => "welcome#about"
 
