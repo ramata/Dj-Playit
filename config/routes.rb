@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'comments#index'
+  root to: 'welcome#index'
   devise_for :users
 
    resources :users do
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     #  resources :songs
    end
 
-
+ resources :welcome
  resources :songs
 
  # root "song#index"
