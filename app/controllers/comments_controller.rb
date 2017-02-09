@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource only: [:edit, :update, :destroy]
-  before_filter :authenticate_user!, except: [:index]
+  # before_filter :authenticate_user!, except: [:index]
 
 # GET /comments
   def index

@@ -1,15 +1,10 @@
-<div class="container">
-   <div class="row">
+<div class="row">
      <div class="col-lg-12">
         <h2>Songs </h2><br>
      </div>
    </div>
-  <!-- <div class="row">
-   <div class="col-lg-4 col-lg-offset-4"> -->
-      <%= link_to 'NEW SONG (+)', new_song_path %>
-   <!-- </div>
-  </div> -->
-</div><br>
+   <%= link_to 'NEW SONG (+)', new_song_path %><br>
+<br>
 <ul>
   <% @songs.each do |song| %>
     <li>

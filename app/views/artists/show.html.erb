@@ -1,17 +1,17 @@
 <h2><%= @artist.name %></h2>
 <h4><%= @artist.nationality %></h4>
 
-<img class='artist-photo' src="<%= @artist.photo_url %>">
+
 <%= image_tag @artist.photo_url %>
 
-<h3>Songs <a href="/songs/new">(+)</a></h3>
+<h3>Songs<%= link_to'(+)', new_song_path(@song)%></h3>
 
 <ul>
   <% @artist.songs.each do |song| %>
     <li>
-      <a href="/songs/<%= song.id %>">
-        <%= "#{song.title} (#{song.album})" %>
-      </a>
+
+        <%= link_to song.title, song_path(song) %>
+
     </li>
   <% end %>
 </ul>

@@ -1,5 +1,5 @@
 <h2> ADD NEW ARTIST </h2>
 
-<%= render partial: "form" %><br>
+<%= render 'form' %><br>
 
-<br><%= link_to 'Back', new_artist_path %>
+<%= link_to 'Back', artists_path(current_user) %>
