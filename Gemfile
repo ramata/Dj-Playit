@@ -37,14 +37,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'cancancan'
+gem 'pg', '~> 0.18'
 
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :production do
-  gem 'pg', '~> 0.18'
-  gem 'rails_12factor'
+gem 'rails_12factor'
 end
 
 group :development, :test do
