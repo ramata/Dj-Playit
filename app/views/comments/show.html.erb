@@ -1,0 +1,12 @@
+<h1>View Comment</h1>
+
+<%= @comment.author %> <br>
+
+<%= @comment.body %><br>
+
+<br><%= link_to 'Edit', edit_user_comment_path(@user) %><br>
+
+<br><%= link_to 'Delete', user_comment_path(@user), :method => 'delete'  %><br>
+
+
+<br><%= link_to 'Back', user_comments_path %>

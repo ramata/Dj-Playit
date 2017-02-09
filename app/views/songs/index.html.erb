@@ -1,0 +1,16 @@
+<div class="row">
+     <div class="col-lg-12">
+        <h2>Songs </h2><br>
+     </div>
+   </div>
+   <%= link_to 'NEW SONG (+)', new_song_path %><br>
+<br>
+<ul>
+  <% @songs.each do |song| %>
+    <li>
+      <a href="/songs/<%= song.id %>">
+        <%= "#{song.title} - #{song.album}" %>
+      </a>
+    </li>
+  <% end %>
+</ul>

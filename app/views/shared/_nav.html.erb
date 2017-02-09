@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+ <div class="container">
+  <div class="navbar-header">
+   <div class="navbar-brand">Dj-Playit
+   </div>
+  </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+   <ul class="nav navbar-nav ">
+      <li><%= link_to 'About', about_path %></li>
+      <li><%= link_to 'Artists', artists_path %></li>
+      <li><%= link_to 'Songs',songs_path %></li>
+      <li><%= link_to 'Reviews', user_comments_path(:user_id) %></li>
+   </ul>
+   <ul class="nav navbar-nav navbar-right">
+     <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path %> |
+      <%= link_to "Login", new_user_session_path  %>
+      <% end %>
+   </ul>
+  </div>
+ </div>
+
+</nav>

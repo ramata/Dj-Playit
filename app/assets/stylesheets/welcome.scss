@@ -1,0 +1,73 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar {
+  border          : none;
+  background-color: #005686;
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+#myNavbar a {
+  color: white;
+}
+.navbar-header {
+  color: white;
+}
+
+nav a {
+  color: white;
+}
+
+nav a:hover {
+  color: purple;
+}
+
+body {
+  width: 100%;
+  background-color: #DAE5F0;
+  color: #141414;
+  background-size: cover;
+  background-image: url("https://cdn.pixabay.com/photo/2014/06/06/10/19/music-363276_1280.jpg");
+  background-repeat: no-repeat;
+  overflow: scroll;
+  line-height: 1.3em;
+}
+
+li a:hover {
+  color: purple;
+}
+
+h1 {
+  font-size: 2em;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #337AB7;
+}
+
+h2 {
+  font-size: 2em;
+  color: #337AB7;
+}
+
+p {
+  color: #337AB7;
+}
+p a {
+  color: #80D8FF;
+}
+ul {
+  color: white;
+}
+
+li {
+  color: white;
+  font-family: 'Wire One', sans-serif;
+  margin: .3em auto .2em 1em;
+  letter-spacing: .1em;
+}
+
+.form-group {
+  color: #337AB7;
+}

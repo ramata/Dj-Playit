@@ -1,0 +1,23 @@
+<%= form_for @song do |f| %>
+    <div class="container">
+    <div class="form-group">
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+    </div>
+    <div class="form-group">
+  <%= f.label :album %><br>
+  <%= f.text_area :album %><br>
+    </div>
+    <div class="form-group">
+  <%= f.label :preview_url %><br>
+  <%= f.text_area :preview_url %><br>
+    </div>
+    <div class="form-group">
+ <%= f.label :artist_id %><br>
+ <%= f.text_area :artist_id %><br>
+    </div>
+    <div class="form-group">
+      <%= f.submit  class: "btn btn-primary" %>
+    </div>
+</div>
+<% end %>
