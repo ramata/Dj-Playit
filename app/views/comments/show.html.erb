@@ -1,9 +1,13 @@
 <h1>View Comment</h1>
-<p>
-<%= @comment.author %>: <br>
+<h2>
+<%= @comment.author %>:
 
-<br><%= @comment.body %><br>
-</p>
+<br>
+<br>
+
+<%= @comment.body %>
+<br>
+</h2>
 <br><%= link_to 'Edit', edit_user_comment_path(@user), class: 'btn btn-primary btn-xs' %><br>
 
 <br><%= link_to 'Delete', user_comment_path(@user), :method => 'delete', data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'  %><br>

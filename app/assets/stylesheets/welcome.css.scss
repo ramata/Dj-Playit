@@ -67,6 +67,10 @@ h3 {
   color: #80D8FF;
 }
 
+h4 {
+  color: #80D8FF;
+}
+
 p {
   color: #80D8FF;;
 }
@@ -106,4 +110,13 @@ label {
 
 input {
   font-size: 1.5em;
+}
+
+#disqus_thread {
+  background-color: white;
+  padding: 1em;
+  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 80%;
 }

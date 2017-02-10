@@ -1,6 +1,8 @@
+<h1>Voila!</h1>
 <h2><%= @artist.name %></h2>
-<h4><%= @artist.nationality %></h4><%= image_tag @artist.photo_url %>
-
+<h4><%= @artist.nationality %></h4>
+<!-- <div height="300px" width="300px"><%= image_tag @artist.photo_url %></div> -->
+<img src='<%= @artist.photo_url %>' height="400px" width="400px">
 <h3>Songs<%= link_to'(+)', new_song_path(@song)%></h3>
 
 <ul>
@@ -10,6 +12,8 @@
     </li>
   <% end %>
 </ul>
+
 <br><%= link_to 'Edit', edit_artist_path(@artist), class: 'btn btn-primary btn-xs' %><br>
 <br><%= link_to 'Delete', (@artist), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %><br>
 <br><%= link_to 'Back', artists_path, class: 'btn btn-primary btn-xs' %>
+<%= render "disqus" %>
