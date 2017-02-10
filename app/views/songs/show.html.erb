@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="listening-info"> You are listening to...
-      </h1>
+      <h1 class="listening-info"> You are listening to...</h1>
       <h2><%= link_to @song.title, @song.preview_url, target: '_blank' %></h2>
       <h3>By: <%= @song.artist_id %></h3>
-      Album: <%= @song.album %></br>
+      <p>Album: <%= @song.album %></p></br>
     </div>
   </div>
 </div>
-<br><%= link_to 'Edit', edit_song_path(@song) %><br>
-<br><%= link_to 'Delete', (@song), method: :delete %><br>
+<br><%= link_to 'Edit', edit_song_path(@song), class: 'btn btn-primary btn-xs' %><br>
+<br><%= link_to 'Delete', (@song), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %><br>
+<br><%= link_to 'Back', songs_path, class: 'btn btn-primary btn-xs' %>

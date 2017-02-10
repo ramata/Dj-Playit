@@ -1,19 +1,15 @@
 <h2><%= @artist.name %></h2>
-<h4><%= @artist.nationality %></h4>
-
-
-<%= image_tag @artist.photo_url %>
+<h4><%= @artist.nationality %></h4><%= image_tag @artist.photo_url %>
 
 <h3>Songs<%= link_to'(+)', new_song_path(@song)%></h3>
 
 <ul>
   <% @artist.songs.each do |song| %>
     <li>
-
-        <%= link_to song.title, song_path(song) %>
-
+      <%= link_to song.title, song_path(song) %>
     </li>
   <% end %>
 </ul>
-<br><%= link_to 'Edit', edit_artist_path(@artist) %><br>
-<br><%= link_to 'Delete', (@artist), method: :delete %><br>
+<br><%= link_to 'Edit', edit_artist_path(@artist), class: 'btn btn-primary btn-xs' %><br>
+<br><%= link_to 'Delete', (@artist), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %><br>
+<br><%= link_to 'Back', artists_path, class: 'btn btn-primary btn-xs' %>

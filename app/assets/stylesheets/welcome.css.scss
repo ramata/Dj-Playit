@@ -14,8 +14,16 @@
 #myNavbar a {
   color: white;
 }
+
+#myNavbar a:hover {
+  color: #9ED594;
+}
 .navbar-header {
   color: white;
+}
+
+.navbar-header:hover {
+  color: #D85E21;
 }
 
 nav a {
@@ -23,40 +31,51 @@ nav a {
 }
 
 nav a:hover {
-  color: purple;
+  color: #D85E21;
 }
 
 body {
   width: 100%;
-  background-color: #DAE5F0;
+  background-color: #9B8C74;
   color: #141414;
   background-size: cover;
   background-image: url("music.jpg");
+  height: 125vh;
+  border: 1px solid #337AB7;
+  margin: 2px;
   background-repeat: no-repeat;
   overflow: scroll;
   line-height: 1.3em;
 }
 
 li a:hover {
-  color: purple;
+  color: #D85E21;
 }
 
 h1 {
   font-size: 2em;
   font-family: 'Josefin Sans', sans-serif;
-  color: #337AB7;
+  color: #80D8FF;;
 }
 
 h2 {
   font-size: 2em;
-  color: #337AB7;
+  color: #80D8FF;
+}
+
+h3 {
+  color: #80D8FF;
 }
 
 p {
-  color: #337AB7;
+  color: #80D8FF;;
 }
 p a {
-  color: #80D8FF;
+  color: #D85E21;
+}
+
+p a:hover {
+  color: #9BCB9B;
 }
 ul {
   color: white;
@@ -70,12 +89,21 @@ li {
 }
 
 .form-group {
-  color: #337AB7;
+  color: #80D8FF;
+}
+
+a {
+  color: #80D8FF;
+}
+
+a:hover {
+  color: #D85E21;
 }
 
 label {
-  color: #337AB7;
+  color: #80D8FF;
 }
+
 input {
   font-size: 1.5em;
 }
