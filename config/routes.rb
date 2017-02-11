@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
 # root 'artists#index'
 resources :artists
-
+get '*path' => redirect('/')
   end
 
 
